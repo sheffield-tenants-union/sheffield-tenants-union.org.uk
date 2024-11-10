@@ -1,0 +1,9 @@
+baseUrl: "https://sheffield-tenants-union.org.uk"
+name: Sheffield Tenants' Union
+logo: /logo.jpg
+urls:
+  form: https://forms.gle/5bgr41FsVpiP1bFE8
+  email: sheffieldtenantsunion@gmail.com
+  source: https://github.com/sheffield-tenants-union/sheffield-tenants-union.org.uk
+  linktree: https://linktr.ee/sheffieldtenantsunion
+  faq: https://github.com/sheffield-tenants-union/#faq

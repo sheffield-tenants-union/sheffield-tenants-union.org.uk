@@ -1,0 +1,69 @@
+---
+permalink: /
+layout: page
+stylesheets:
+  - stylesheet_homepage.css
+top-bit:
+  background-image: /images/group-photo.webp
+  title: Solidarity. Community. Action.
+  subtitle: Sheffield Tenants' Union (STU)
+  text: "STU is Sheffield's only community-led tenant's union. We're still growing: get in touch to volunteer, get advice or support us."
+sections:
+  solidarity:
+    image: /images/cooking-1.webp
+    image_alt: over-the-shoulder picture of some people cooking
+    title: Solidarity
+    subtitle: Working together for tenants in Sheffield
+  community:
+    image: /images/cooking-2.webp
+    image_alt: picture of table with food laid out
+    title: Community
+    subtitle: Helping our friends and neighbours
+    text: 
+      - "Unlike a trade union, our members are linked by the communities they live and rent in. It's in all of our interests when someone in our community is suffering to remove that suffering and improve the area for everyone."
+      - "We're all part of the union: we all contribute to our community and we all benefit."
+    form: true
+  action:
+    image: /images/group-photo.webp
+    image_alt: a picture of a group of people
+    title: Action
+    subtitle: Making change happen
+    text:
+      - Tenants are badly served by an expensive and needlessly bureaucratic system. When we need repairs undertaking, unjust fees challenging, or unfair evictions resisting, it's much more effective to take action into our own hands.
+      - STU work together to take direct action against the structures that keep tenants down. We employ and upskill each other so we don't have to rely on a flawed system. We're all we've got! 
+    form: true
+---
+{{#with [top-bit]}}
+<section class="top-bit" style='--img: url("{{ [background-image] }}")'>
+  <div>
+    <span class="title">{{title}}</span>
+    <h2 class="subtitle">{{subtitle}}</h2>
+    <p class="text">
+      {{text}}
+    </p>
+  </div>
+</section>
+{{/with}}
+{{#each sections}}
+<section class="bit">
+  <div class="grid">
+    <div class="image">
+      <img src="{{ image }}" alt="{{ image_alt }}" width="250" height="250">
+    </div>
+    <div class="text">
+      <h2 class="title">{{ title }}</h2>
+      <h3 class="subtitle">{{ subtitle }}</h3>
+      {{#each text}}
+        <p>{{ . }}</p>
+      {{/each}}
+      {{#if form}}
+      <a class="sign-up" href="{{ site.urls.form }}">Join us!</a>
+      {{/if}}
+    </div>
+  </div>
+</section>
+{{/each}}
+<section class="bit calendar">
+  <h2>What's On</h2>
+  <iframe title="google calendar" src="https://calendar.google.com/calendar/embed?src=edc702853d63bf6375112c0cf142cad7e804a3efaf2891ff66e5157ee0c1acd7%40group.calendar.google.com&amp;ctz=Europe%2FLondon" style="border: 0px;" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+</section>

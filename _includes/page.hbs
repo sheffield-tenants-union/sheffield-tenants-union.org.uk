@@ -1,0 +1,58 @@
+---
+title: ""
+description: "The website of STU (Sheffield Tenants' Union)"
+og_image: "/images/group-photo.webp"
+stylesheets:
+  - stylesheet.css
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- browser metas -->
+    <title>{{ site.name }}{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <!-- allow unicode characters -->
+    <meta charset="utf-8" />
+    <!-- 'zoom' on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- embed metas - https://ogp.me/ - visible when sharing on social media -->
+    <meta property="og:title" content="{{ site.name }}{{ title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site" content="{{ site.name }}" />
+    <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}" />
+    <meta property="og:image" content="{{ site.baseUrl }}{{ og_image }}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:locale" content="en_GB" />
+    <!-- styling -->
+    <!-- favicon - can be any image (.png, .jpg, .ico) -->
+    <link rel="icon" type="image/png" href="{{ site.logo }}" />
+    {{#each stylesheets}}
+    <link rel="stylesheet" href="/{{this}}">
+    {{/each}}
+</head>
+
+<body>
+    <header>
+        <img src="{{ site.logo }}" alt="logo of Sheffield Tenants' Union" height="100" width="100">
+        <h1>{{ site.name }}</h1>
+        <a class="sign-up" href="{{ site.urls.form }}">sign&nbsp;up!</a>
+    </header>
+    <main>
+        {{{content}}}
+    </main>
+    <footer>
+        <section class="links">
+            <a href="{{ site.urls.faq }}">FAQ</a>
+            <span>⁂</span>
+            <a href="{{ site.urls.linktree }}">linktree</a>
+            <span>⁂</span>
+            <a href="mailto:{{ site.urls.email }}">{{ site.urls.email }}</a>
+            <span>⁂</span>
+            <a href="{{ site.urls.source }}">website source</a>
+        </section>
+    </footer>
+</body>
+
+</html>

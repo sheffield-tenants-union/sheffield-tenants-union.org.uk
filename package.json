@@ -1,0 +1,25 @@
+{
+  "name": "stu-website",
+  "version": "0.1.0",
+  "description": "website for Sheffield Tenants' Union",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheffield-tenants-union/sheffield-tenants-union.org.uk.git"
+  },
+  "author": "alifeee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheffield-tenants-union/sheffield-tenants-union.org.uk/issues"
+  },
+  "homepage": "https://github.com/sheffield-tenants-union/sheffield-tenants-union.org.uk#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-handlebars": "^1.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}

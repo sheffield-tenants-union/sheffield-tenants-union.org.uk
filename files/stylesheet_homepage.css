@@ -1,0 +1,151 @@
+main section.top-bit {
+  /* background-image: var(--img); */
+  min-height: 30rem;
+  position: relative;
+  padding-top: 2rem;
+  padding-left: 12rem;
+  padding-right: 10rem;
+  z-index: 1;
+}
+
+main section.top-bit::before {
+  content: "";
+  position: absolute;
+  --pad: 5px;
+  width: calc(100% + var(--pad));
+  height: calc(100% + var(--pad));
+  top: calc(-1 * var(--pad));
+  bottom: 0;
+  left: calc(-1 * var(--pad));
+  right: calc(-1 * var(--pad));
+
+  background-image: var(--img);
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  background-size: cover;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+main section.top-bit > div {
+  padding: 5rem;
+  max-width: 60rem;
+  background-color: #ffffff69;
+  color: var(--text-color-dark);
+}
+
+main section.top-bit .title {
+  font-size: 3rem;
+}
+
+main section.top-bit .title,
+.subtitle,
+.text {
+  padding: 0;
+  margin: 0;
+}
+
+.bit {
+  padding: 5rem 2rem;
+}
+
+.bit img {
+  width: 100%;
+  height: auto;
+  max-width: 40rem;
+  max-height: 40rem;
+}
+
+.bit .grid {
+  display: grid;
+  grid-template-areas: "image text";
+  gap: 10rem;
+}
+
+.bit:nth-child(2n + 1) .grid {
+  grid-template-areas: "text image";
+  grid-template-columns: 1fr 1fr;
+}
+
+.bit .grid .image {
+  grid-area: image;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.bit:nth-child(2n + 1) .grid .image {
+  justify-content: start;
+}
+.bit:nth-child(2n) .grid .image {
+  justify-content: end;
+}
+
+.bit .grid .text {
+  grid-area: text;
+  padding: 1rem;
+  max-width: 25rem;
+}
+
+.bit:nth-child(2n + 1) .grid .text {
+  justify-self: end;
+}
+.bit:nth-child(2n) .grid .text {
+  justify-self: start;
+}
+
+.text .title {
+  padding: 0;
+}
+
+main section:nth-child(2n) {
+  background-color: var(--bg-color-3);
+  color: var(--text-color-dark);
+}
+main section:nth-child(2n + 1) {
+  background-color: var(--bg-color-1);
+  color: var(--text-color-light);
+}
+
+@media (width <=850px) {
+  main section.top-bit {
+    padding: 1rem;
+  }
+  main section.top-bit > div {
+    padding: 2rem;
+  }
+  .bit .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "text";
+  }
+  .bit:nth-child(2n + 1) .grid {
+    grid-template-areas: "image" "text";
+    grid-template-columns: 1fr;
+  }
+  .bit:nth-child(2n) .grid .text,
+  .bit:nth-child(2n) .grid .image {
+    justify-self: center;
+  }
+  .bit:nth-child(2n + 1) .grid .text,
+  .bit:nth-child(2n + 1) .grid .image {
+    justify-self: center;
+  }
+  .bit .grid .image {
+    max-width: 20rem;
+  }
+}
+
+@media (width <=1100px) {
+  .bit .grid {
+    gap: 1rem;
+  }
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.calendar iframe {
+  max-width: 50rem;
+}
